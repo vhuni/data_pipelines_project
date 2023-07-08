@@ -1,0 +1,8 @@
+run:
+docker compose up ariflow-init     --> this initializes the airflow user and password "airflow/airflow"
+
+run:
+docker-compose up                  --> starts airflow app containers
+
+run:
+docker-compose down                --> shuts down and deletes airflow containers
