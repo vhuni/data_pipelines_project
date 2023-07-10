@@ -2,7 +2,7 @@
 FROM python:3.8-alpine
 
 # copy the requirements file into the image
-COPY inlcude/requirements.txt /airflow/requirements.txt
+COPY include/requirements.txt /airflow/requirements.txt
 
 # switch working directory
 WORKDIR /airflow
