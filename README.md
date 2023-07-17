@@ -15,16 +15,16 @@ This project aims to provide a comprehensive analysis of the resumption of study
 # Overview
 The goal of this project is to develop a data pipeline using Apache Airflow to automate the process of obtaining, transforming, and visualizing data. The pipeline will consist of four main parts: data acquisition ([web scraping](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)), data transformation (using [pandas](https://pandas.pydata.org/docs/)), data storage (CSV), and data visualization ([Streamlit.io](https://streamlit.io/)). The pipeline will be scheduled to run daily.
 
-Part 1: Obtaining the Data (Web Scraping)
+* Part 1: Obtaining the Data (Web Scraping)
 The data engineers will be responsible for implementing web scraping to collect the required data from one or multiple websites. They should identify the relevant data sources, design the web scraping logic, and extract the necessary data using libraries such as BeautifulSoup or Scrapy. The extracted data should be stored in a structured format (e.g., pandas DataFrame) for further processing.
 
-Part 2: Transforming the Data (Pandas)
+* Part 2: Transforming the Data (Pandas)
 Once the data is obtained, the data engineers will use pandas, a powerful data manipulation library in Python, to transform and clean the collected data. This step involves performing operations such as filtering, aggregating, merging, and cleaning the data to make it suitable for analysis and visualization. The transformed data should be stored in pandas DataFrames for further processing.
 
-Part 3: Saving Data to CSV and Uploading to AWS S3
+* Part 3: Saving Data to CSV and Uploading to AWS S3
 After the data has been transformed, the data engineers will save the pandas DataFrames into CSV files. These CSV files will serve as the intermediate storage for the data. Additionally, the data engineers will use the AWS SDK (Boto3) to upload the CSV files to an S3 bucket on Amazon Web Services (AWS). Proper authentication and access controls should be implemented to ensure data security.
 
-Part 4: Reading CSV Data from S3 for Visualization using Streamlit.io
+* Part 4: Reading CSV Data from S3 for Visualization using Streamlit.io
 In the final part of the pipeline, the data engineers will develop a Streamlit.io application to visualize the data stored in the CSV files. Streamlit.io is a popular Python library for building interactive web applications for data exploration and visualization. The engineers will read the CSV data from the S3 bucket using the AWS SDK and use Streamlit.io to create visualizations, interactive dashboards, or any other desired data presentation format. The Streamlit.io application should be deployed and accessible for end-users to explore the data.
 
 # Airflow Data Pipeline
