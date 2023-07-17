@@ -1,4 +1,4 @@
-FROM apache/airflow:2.5.0-python3.10
+FROM apache/airflow:2.6.2-python3.10
 
 # execute as root
 USER root
@@ -44,7 +44,7 @@ USER root
 
 # Add in the python dependencies that are required from local to current build context 
 
-# ADD requirements.txt /opt/airflow/
+ADD requirements.txt airflow/
 # ADD openssl.cnf /etc/ssl/
 
 USER airflow
