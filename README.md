@@ -1,4 +1,18 @@
-## Project Brief: Data Pipeline using Airflow
+
+## Project Brief: Resumption of Study after a Year Out of Higher Education (HE) 2014/15 to 2018/19 in the UK
+
+# Project Brief:
+The project will focus on the available data, including the number of students who resume at the same HE institution, the percentage of students who resume at the same institution, the number of students who transfer to other UK HE institutions, the percentage of students who transfer to other institutions, the number of students no longer in HE, the percentage of students no longer in HE, the total number of entrants in the academic year, and the percentage of students not in HE for two years. The project aims to provide insights into the resumption patterns and outcomes for students who take a year out of HE.
+
+Data Collection and Analysis:
+
+Obtain data from HESA, the Higher Education Statistics Agency.
+Data Preparation: Clean and preprocess the collected data to ensure accuracy and consistency.
+Data Analysis: Analyze the collected data to identify trends, patterns, and factors influencing the resumption of study after a year out of HE. 
+
+Conclusion:
+This project aims to provide a comprehensive analysis of the resumption of study after a year out of Higher Education in the UK. By examining the available data on resumption rates, transfers, and non-continuation, the project will shed light on the outcomes and pathways for students who take a break from their studies.
+
 # Overview
 The goal of this project is to develop a data pipeline using Apache Airflow to automate the process of obtaining, transforming, and visualizing data. The pipeline will consist of four main parts: data acquisition (web scraping), data transformation (using pandas), data storage (CSV), and data visualization (Streamlit.io). The pipeline will be scheduled to run daily.
 
