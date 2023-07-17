@@ -1,4 +1,3 @@
-
 ## Project Brief: Resumption of Study after a Year Out of Higher Education (HE) 2014/15 to 2018/19 in the UK
 
 # Project Brief:
@@ -35,8 +34,8 @@ The DAG starts with the task "process_csv" that calls the process_csv function, 
 
 The DAG is scheduled to run daily (schedule_interval="@daily") and has the catchup=False parameter to avoid backfilling missed runs.
 
-Data engineers should modify and expand the DAG by implementing the web scraping logic, data transformation, and any additional tasks required to complete the project. Each task should be implemented as a separate operator or Python function and connected using appropriate dependencies to form the complete data pipeline.
+> Data engineers should modify and expand the DAG by implementing the web scraping logic, data transformation, and any additional tasks required to complete the project. Each task should be implemented as a separate operator or Python function and connected using appropriate dependencies to form the complete data pipeline.
 
-Please note that the provided code includes commented-out sections that can be used as a reference for implementing the missing functionality related to training models and choosing the best model based on accuracy. Feel free to uncomment and adapt these sections if they are relevant to your project.
+#### Please note that the provided code includes commented-out sections that can be used as a reference for implementing the missing functionality related to training models and choosing the best model based on accuracy. Feel free to uncomment and adapt these sections if they are relevant to your project.
 
-For any questions or assistance during the development process, please refer to the Airflow documentation, pandas documentation, AWS SDK (Boto3) documentation, and Streamlit.io documentation, or consult with the project team.
+###### For any questions or assistance during the development process, please refer to the Airflow documentation, pandas documentation, AWS SDK (Boto3) documentation, and Streamlit.io documentation, or consult with the project team.
