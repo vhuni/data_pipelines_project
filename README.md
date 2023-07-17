@@ -5,7 +5,7 @@ The project will focus on the available data, including the number of students w
 
 Data Collection and Analysis:
 
-Obtain data from HESA, the Higher Education Statistics Agency.
+Obtain data from HESA, the [Higher Education Statistics Agency](https://www.hesa.ac.uk/data-and-analysis/performance-indicators/non-continuation-summary).
 Data Preparation: Clean and preprocess the collected data to ensure accuracy and consistency.
 Data Analysis: Analyze the collected data to identify trends, patterns, and factors influencing the resumption of study after a year out of HE. 
 
@@ -13,7 +13,7 @@ Conclusion:
 This project aims to provide a comprehensive analysis of the resumption of study after a year out of Higher Education in the UK. By examining the available data on resumption rates, transfers, and non-continuation, the project will shed light on the outcomes and pathways for students who take a break from their studies.
 
 # Overview
-The goal of this project is to develop a data pipeline using Apache Airflow to automate the process of obtaining, transforming, and visualizing data. The pipeline will consist of four main parts: data acquisition (web scraping), data transformation (using pandas), data storage (CSV), and data visualization (Streamlit.io). The pipeline will be scheduled to run daily.
+The goal of this project is to develop a data pipeline using Apache Airflow to automate the process of obtaining, transforming, and visualizing data. The pipeline will consist of four main parts: data acquisition ([web scraping](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)), data transformation (using [pandas](https://pandas.pydata.org/docs/)), data storage (CSV), and data visualization ([Streamlit.io](https://streamlit.io/)). The pipeline will be scheduled to run daily.
 
 Part 1: Obtaining the Data (Web Scraping)
 The data engineers will be responsible for implementing web scraping to collect the required data from one or multiple websites. They should identify the relevant data sources, design the web scraping logic, and extract the necessary data using libraries such as BeautifulSoup or Scrapy. The extracted data should be stored in a structured format (e.g., pandas DataFrame) for further processing.
@@ -28,7 +28,7 @@ Part 4: Reading CSV Data from S3 for Visualization using Streamlit.io
 In the final part of the pipeline, the data engineers will develop a Streamlit.io application to visualize the data stored in the CSV files. Streamlit.io is a popular Python library for building interactive web applications for data exploration and visualization. The engineers will read the CSV data from the S3 bucket using the AWS SDK and use Streamlit.io to create visualizations, interactive dashboards, or any other desired data presentation format. The Streamlit.io application should be deployed and accessible for end-users to explore the data.
 
 # Airflow Data Pipeline
-To automate and orchestrate the entire process, the data engineers will use Apache Airflow, an open-source platform for creating, scheduling, and monitoring workflows. The provided code demonstrates a basic Airflow DAG (Directed Acyclic Graph) with tasks representing the different parts of the data pipeline.
+To automate and orchestrate the entire process, the data engineers will use [Apache Airflow](https://airflow.apache.org/), an open-source platform for creating, scheduling, and monitoring workflows. The provided code demonstrates a basic Airflow DAG (Directed Acyclic Graph) with tasks representing the different parts of the data pipeline.
 
 The DAG starts with the task "process_csv" that calls the process_csv function, responsible for saving the data to a local CSV file and uploading it to the specified S3 bucket. Next, the task "visualize_data" calls the visualize_data function, responsible for reading the CSV data from the S3 bucket and creating visualizations using Streamlit.io.
 
