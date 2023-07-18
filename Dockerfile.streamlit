@@ -2,17 +2,17 @@
 FROM python:3.8-slim
 
 # copy the requirements file into the image
-COPY include/requirements.txt /airflow/requirements.txt
+COPY /include/requirements.txt /opt/airflow/include/requirements.txt
 
 # switch working directory
-WORKDIR /opt/airflow
+WORKDIR /opt/airflow/include
+
 
 # install the dependencies and packages in the requirements file
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
 # copy every content from the local file to the image
-# COPY dags /opt/airflow/dags
 
 # COPY configs /app/configs
 
@@ -21,6 +21,4 @@ EXPOSE 8501
 ENV environment local
 
 # configure the container to run in an executed manner
-ENTRYPOINT ["streamlit", "run", "dags/visualize.py", "--server.port=8501", "--server.address=0.0.0.0"]
-
-# CMD ["streamlit run --server.enableWebsocketCompression=false --server.enableCORS=false --server.enableXsrfProtection=false include/streamlit_app.py" ]
+# ENTRYPOINT ["streamlit", "run", "streamlitapp.py", "--server.port=8501", "--server.address=0.0.0.0", "--server.enableWebsocketCompression=false" ,"--server.enableCORS=false", "--server.enableXsrfProtection=false"]
