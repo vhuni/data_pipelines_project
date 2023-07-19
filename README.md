@@ -29,15 +29,15 @@ After the data has been transformed it will be saved from pandas DataFrames into
 * Part 4: Reading CSV Data from S3 for Visualization using Streamlit.io
 In the final part of the pipeline, the consultants will develop a Streamlit.io web page to visualize the data stored in the CSV files. Use Streamlit.io to create visualizations, interactive dashboards, or any other desired data presentation format. The Streamlit.io application should be deployed and accessible for end-users to explore the data.
 
+> Consultants should modify and expand the DAG by implementing the web scraping logic, data transformation, and any additional tasks required to complete the project. Each task should be implemented as a separate operator or Python function and connected using appropriate dependencies to form the complete data pipeline.
+> The Project is divided into 4 parts so consultants can divide the work as a team and make use of [GitHub](https://github.com/) to commit changes and pull requests to merge the project in one branch.
+
 # Airflow Data Pipeline
 To automate and orchestrate the entire process, the data engineers will use [Apache Airflow](https://airflow.apache.org/), an open-source platform for creating, scheduling, and monitoring workflows. The provided code demonstrates a basic Airflow DAG (Directed Acyclic Graph) with tasks representing the different parts of the data pipeline.
 
 The DAG starts with the task "process_csv" that calls the process_csv function, responsible for saving the data to a local CSV file and uploading it to the specified S3 bucket. Next, the task "visualize_data" calls the visualize_data function, responsible for reading the CSV data from the S3 bucket and creating visualizations using Streamlit.io.
 
 The DAG is scheduled to run daily (schedule_interval="@daily") and has the catchup=False parameter to avoid backfilling missed runs.
-
-> Consultants should modify and expand the DAG by implementing the web scraping logic, data transformation, and any additional tasks required to complete the project. Each task should be implemented as a separate operator or Python function and connected using appropriate dependencies to form the complete data pipeline.
-> The Project is divided into 4 parts so consultants can divide the work as a team and make use of [GitHub](https://github.com/) to commit changes and pull requests to merge the project in one branch.
 
 #### Please note that the provided code includes commented-out sections that can be used as a reference for implementing the missing functionality related to training models and choosing the best model based on accuracy. Feel free to uncomment and adapt these sections if they are relevant to your project.
 
