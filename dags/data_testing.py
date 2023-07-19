@@ -3,8 +3,8 @@ import pandas as pd
 import boto3
 
 def process_csv():
-    s3 = boto3.client('s3',aws_access_key_id='AKIAVBDSPFQCFFHLKWE5',
-    aws_secret_access_key='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')
+    s3 = boto3.client('s3',aws_access_key_id='ssss',
+    aws_secret_access_key='ssssss')
     s3_bucket = 'xander-test-c8'
     # s3_key = 'path/to/your/csv/file.csv'
     local_file_path = '/opt/airflow/include/general_data.csv'

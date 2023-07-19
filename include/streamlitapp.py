@@ -8,8 +8,8 @@ from streamlit.web import cli as stcli
 
 
 def visualize_data():    
-    s3 = boto3.client('s3', aws_access_key_id='AKIAVBDSPFQCFFHLKWE5',
-    aws_secret_access_key='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')
+    s3 = boto3.client('s3', aws_access_key_id='sss',
+    aws_secret_access_key='sssss')
     s3_bucket = 'xander-test-c8'
     local_file_name = 'new_data.csv'
     with open(local_file_name, 'wb') as f:
