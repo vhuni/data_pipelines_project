@@ -30,6 +30,7 @@ After the data has been transformed it will be saved from pandas DataFrames into
 In the final part of the pipeline, the consultants will develop a Streamlit.io web page to visualize the data stored in the CSV files. Use Streamlit.io to create visualizations, interactive dashboards, or any other desired data presentation format. The Streamlit.io application should be deployed and accessible for end-users to explore the data.
 
 > Consultants should modify and expand the DAG by implementing the web scraping logic, data transformation, and any additional tasks required to complete the project. Each task should be implemented as a separate operator or Python function and connected using appropriate dependencies to form the complete data pipeline.
+
 > The Project is divided into 4 parts so consultants can divide the work as a team and make use of [GitHub](https://github.com/) to commit changes and pull requests to merge the project in one branch.
 
 # Airflow Data Pipeline
