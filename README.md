@@ -18,16 +18,16 @@ This project aims to provide a comprehensive analysis of the resumption of study
 The goal of this project is to develop a data pipeline using Apache Airflow to automate the process of obtaining, transforming, and visualizing data. The pipeline will consist of four main parts: data acquisition ([web scraping](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)), data transformation (using [pandas](https://pandas.pydata.org/docs/)), data storage (CSV), and data visualization ([Streamlit.io](https://streamlit.io/)). The pipeline will be scheduled to run daily.
 
 * Part 1: Obtaining the Data (Web Scraping)
-The consultants will be responsible for implementing web scraping to collect the required data from one or multiple websites. They should identify the relevant data sources, design the web scraping logic, and extract the necessary data using libraries such as BeautifulSoup or Scrapy. The extracted data should be stored in a structured format (e.g., pandas DataFrame) for further processing.
+The consultants will be responsible for implementing web scraping to collect the required data from [Higher Education Statistics Agency](https://www.hesa.ac.uk/data-and-analysis/performance-indicators/non-continuation-summary) using libraries such as BeautifulSoup or Scrapy.
 
 * Part 2: Transforming the Data (Pandas)
-Once the data is obtained, the consultants will use pandas to transform and clean the collected data. This step involves performing operations such as filtering, aggregating, merging, and cleaning the data to make it suitable for analysis and visualization. 
+Once the data is obtained, the consultants will use pandas to transform and clean the collected data. 
 
 * Part 3: Saving Data to CSV and Uploading to AWS S3
-After the data has been transformed it will be saved from pandas DataFrames into CSV files. These CSV files will serve as the intermediate storage for the data. Additionally, the consultants will use the AWS SDK (Boto3) to upload the CSV files to an S3 bucket on Amazon Web Services (AWS). Proper authentication and access controls should be implemented to ensure data security.
+After the data has been transformed it will be saved from pandas DataFrames into CSV files. The consultants will use the AWS SDK (Boto3) to upload the CSV files to an S3 bucket on Amazon Web Services (AWS). 
 
 * Part 4: Reading CSV Data from S3 for Visualization using Streamlit.io
-In the final part of the pipeline, the consultants will develop a Streamlit.io web page to visualize the data stored in the CSV files. Use Streamlit.io to create visualizations, interactive dashboards, or any other desired data presentation format. The Streamlit.io application should be deployed and accessible for end-users to explore the data.
+In the final part of the pipeline, the consultants will develop a Streamlit.io web page to visualize the data stored in the CSV files. 
 
 > Consultants should modify and expand the DAG by implementing the web scraping logic, data transformation, and any additional tasks required to complete the project. Each task should be implemented as a separate operator or Python function and connected using appropriate dependencies to form the complete data pipeline.
 
@@ -36,9 +36,10 @@ In the final part of the pipeline, the consultants will develop a Streamlit.io w
 # Airflow Data Pipeline
 To automate and orchestrate the entire process, the data engineers will use [Apache Airflow](https://airflow.apache.org/), an open-source platform for creating, scheduling, and monitoring workflows. The provided code demonstrates a basic Airflow DAG (Directed Acyclic Graph) with tasks representing the different parts of the data pipeline.
 
-The DAG starts with the task "process_csv" that calls the process_csv function, responsible for saving the data to a local CSV file and uploading it to the specified S3 bucket. Next, the task "visualize_data" calls the visualize_data function, responsible for reading the CSV data from the S3 bucket and creating visualizations using Streamlit.io.
-
-The DAG is scheduled to run daily (schedule_interval="@daily") and has the catchup=False parameter to avoid backfilling missed runs.
+- the DAG starts with the task "process_csv" that calls the process_csv function
+- responsible for saving the data to a local CSV file and uploading it to the specified S3 bucket. 
+- the task "visualize_data" calls the visualize_data function, responsible for reading the CSV data from the S3 bucket and creating visualizations using Streamlit.io.
+- the DAG is scheduled to run daily (schedule_interval="@daily") and has the catchup=False parameter to avoid backfilling missed runs.
 
 #### Please note that the provided code includes commented-out sections that can be used as a reference for implementing the missing functionality related to training models and choosing the best model based on accuracy. Feel free to uncomment and adapt these sections if they are relevant to your project.
 
