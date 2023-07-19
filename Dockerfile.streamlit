@@ -3,6 +3,7 @@ FROM python:3.8-slim
 
 # copy the requirements file into the image
 COPY /include/requirements.txt /opt/airflow/include/requirements.txt
+COPY /include/.streamlit /opt/airflow/include/.streamlit/
 
 # switch working directory
 WORKDIR /opt/airflow/include
@@ -21,4 +22,4 @@ EXPOSE 8501
 ENV environment local
 
 # configure the container to run in an executed manner
-# ENTRYPOINT ["streamlit", "run", "streamlitapp.py", "--server.port=8501", "--server.address=0.0.0.0", "--server.enableWebsocketCompression=false" ,"--server.enableCORS=false", "--server.enableXsrfProtection=false"]
+ENTRYPOINT ["streamlit", "run", "streamlitapp.py", "--server.port=8501", "--server.address=0.0.0.0", "--server.enableWebsocketCompression=false" ,"--server.enableCORS=false", "--server.enableXsrfProtection=false"]
