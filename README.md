@@ -51,9 +51,9 @@ To automate and orchestrate the entire process, the data engineers will use [Apa
 
 - **dags**: This directory contains all the Apache Airflow DAG files. Airflow DAGs define the workflows and tasks for data processing, ETL (Extract, Transform, Load) operations, and other data-related processes.
 
-- **dags/my_dag.py**: Example Apache Airflow DAG file. You can add more DAG files as needed for different workflows.
+- **dags/main.py**: Apache Airflow DAG file. You can add more DAG files as needed for different workflows. This main.py contains the dag to run the python operators.
 
-- **dags/data_testing.py**: Another example Apache Airflow DAG file.
+- **dags/data_testing.py**: Another example Apache Airflow DAG file to download and upload files into AWS S3 bucket.
 
 - **include**: This directory contains the Streamlit.io web application.
 
@@ -65,7 +65,7 @@ To automate and orchestrate the entire process, the data engineers will use [Apa
 
 - **include/requirements.txt**: Lists the dependencies required to run the Streamlit.io application.
 
-- **dags**: This sub-directory stores the Apache Airflow DAG files.
+- **requirements.txt**: Lists the dependencies required to run Apache Airflow.
 
 - **Dockerfile.streamlit**: Docker configuration file for building the Streamlit.io image.
 
