@@ -44,3 +44,54 @@ To automate and orchestrate the entire process, the data engineers will use [Apa
 #### Please note that the provided code includes commented-out sections that can be used as a reference for implementing the missing functionality related to training models and choosing the best model based on accuracy. Feel free to uncomment and adapt these sections if they are relevant to your project.
 
 ###### For any questions or assistance during the development process, please refer to the Airflow documentation, pandas documentation, AWS SDK (Boto3) documentation, and Streamlit.io documentation, or consult with the stakeholders.
+
+# Project Structure
+
+### Description
+
+- **dags**: This directory contains all the Apache Airflow DAG files. Airflow DAGs define the workflows and tasks for data processing, ETL (Extract, Transform, Load) operations, and other data-related processes.
+
+- **dags/main.py**: Apache Airflow DAG file. You can add more DAG files as needed for different workflows. This main.py contains the dag to run the python operators.
+
+- **dags/data_testing.py**: Another example Apache Airflow DAG file to download and upload files into AWS S3 bucket.
+
+- **include**: This directory contains the Streamlit.io web application.
+
+- **include/.streamlit**: This sub-directory stores the config files required for the Streamlit.io application.
+
+- **include/streamlitapp.py**: The main Streamlit.io application file where you define the interactive data visualization and analysis.
+
+- **Dockerfile**: Docker configuration file for building the Airflow image.
+
+- **include/requirements.txt**: Lists the dependencies required to run the Streamlit.io application.
+
+- **requirements.txt**: Lists the dependencies required to run Apache Airflow.
+
+- **Dockerfile.streamlit**: Docker configuration file for building the Streamlit.io image.
+
+- **docker-compose.yml**: Docker Compose file for orchestrating the Airflow and Streamlit services.
+
+## Getting Started
+
+1. Clone the repository to your local machine:
+
+```bash
+git clone https://github.com/vhuni/data_pipelines_project.git
+cd data_pipelines_project
+```
+
+2. Set up Apache Airflow and Streamlit using Docker:
+
+Navigate to the data_pipelines_project directory and build airflow and streamlit image using docker-compose.yaml:
+```bash
+docker-compose up 
+```
+
+3. Access the Airflow web application in your browser at http://localhost:8080.
+
+4. Access the Streamlit.io web application in your browser at http://localhost:8501.
+
+## Usage
+Apache Airflow: Customize the DAG files in the dags directory to define your data workflows and processing tasks.
+
+Streamlit.io: Modify the sinclude/streamlitapp.py file to create interactive data visualizations and analyses based on your data.
