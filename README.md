@@ -88,8 +88,10 @@ docker-compose up
 ```
 
 3. Access the Airflow web application in your browser at http://localhost:8080.
+4. Navigate to the DAGs section and look for my_dag in the active DAGs.
+5. Click on it and it will show the Tasks inside the DAGs.
 
-4. Access the Streamlit.io web application in your browser at http://localhost:8501.
+6. Access the Streamlit.io web application in your browser at http://localhost:8501.
 
 ## Usage
 Apache Airflow: Customize the DAG files in the dags directory to define your data workflows and processing tasks.
