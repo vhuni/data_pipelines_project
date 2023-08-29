@@ -33,6 +33,15 @@ In the final part of the pipeline, the consultants will develop a Streamlit.io w
 
 > The Project is divided into 4 parts so consultants can divide the work as a team and make use of [GitHub](https://github.com/) to commit changes and pull requests to merge the project in one branch.
 
+## Assessment
+For the assessment, you will have a 15 minute technical interview. This will consist of a strict 5 minute presentation on your technical solution. There is no need to create slides for this but you may want to demo your code. For the second half of the session, you will be asked technical questions related to the project. You will be assessed on:
+
+Project Complexity
+Brief Completness i.e. have you managed to meet the client brief?
+Coding Standards
+
+Good Luck!
+
 # Airflow Data Pipeline
 To automate and orchestrate the entire process, the data engineers will use [Apache Airflow](https://airflow.apache.org/), an open-source platform for creating, scheduling, and monitoring workflows. The provided code demonstrates a basic Airflow DAG (Directed Acyclic Graph) with tasks representing the different parts of the data pipeline.
 
@@ -95,3 +104,4 @@ docker-compose up
 Apache Airflow: Customize the DAG files in the dags directory to define your data workflows and processing tasks.
 
 Streamlit.io: Modify the sinclude/streamlitapp.py file to create interactive data visualizations and analyses based on your data.
+

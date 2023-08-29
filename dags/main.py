@@ -28,7 +28,10 @@ def process_csv():
 def web_scraping_b4():
     URL = "https://webscraper.io/test-sites/e-commerce/allinone/computers/laptops"
     r = requests.get(URL)
-    soup = BeautifulSoup(r.content, 'html.parser')
+
+    html_content = r.text
+
+    soup = BeautifulSoup(html_content, 'html.parser')
 
     products=[]  # a list to store quotes
    
@@ -37,18 +40,16 @@ def web_scraping_b4():
     for row in table.findAll('div', 
                              attrs = {"class":"col-sm-4 col-lg-4 col-md-4"}):
         cols = row.find_all('thumbnail')
-        item = cols.text
-        price = row.a['href']
-        description = row.img['src']
-        rating = row.img['alt'].split(" #")[0]
-        products.append([item,price,description,rating])
+        item = cols['caption']
+        name = cols.h4.a['title']
+        products.append([item,name])
    
-filename = 'inspirational_quotes.csv'
-with open(filename, 'w', newline='') as f:
-    w = csv.DictWriter(f,['theme','url','img','lines','author'])
-    w.writeheader()
-    for quote in quotes:
-        w.writerow(quote)
+    filename = 'products.csv'
+    with open(filename, 'w', newline='') as f:
+        w = csv.DictWriter(f,['item','name'])
+        w.writeheader()
+        for product in products:
+            w.writerow(product)
 
 with DAG("my_dag", start_date=datetime(2021, 1, 1),
     schedule_interval="@daily", catchup=False) as dag:
