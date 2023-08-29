@@ -25,6 +25,10 @@ def process_csv():
     local_file_path = '/opt/airflow/include/general_data.csv'
     s3.upload_file(local_file_path, s3_bucket, 'general_data.csv')
 
+'''
+    # The function web_scraping_b4 below is an example of a bs4 web scraping script. You can use this as a reference in making you webscraping
+    # function. Simple add this to the DAG as a PythonOperator and schedule it before the processing of the csv if needed.  
+
 def web_scraping_b4():
     URL = "https://webscraper.io/test-sites/e-commerce/allinone/computers/laptops"
     r = requests.get(URL)
@@ -33,23 +37,28 @@ def web_scraping_b4():
 
     soup = BeautifulSoup(html_content, 'html.parser')
 
-    products=[]  # a list to store quotes
+    product_list = [] # a list to store products
    
-    table = soup.find('div', attrs = {'class':'row'}) 
-   
-    for row in table.findAll('div', 
-                             attrs = {"class":"col-sm-4 col-lg-4 col-md-4"}):
-        cols = row.find_all('thumbnail')
-        item = cols['caption']
-        name = cols.h4.a['title']
-        products.append([item,name])
-   
+    table = soup.find('div', attrs = {'class':'col-md-9'}) 
+    table_new = table.find('div', attrs = {'class':"row"})
+    rows = table_new.find_all('div', attrs = {'class':"caption"})
+
+    print(rows)
+
+    print("-------------------------------------")
     filename = 'products.csv'
     with open(filename, 'w', newline='') as f:
-        w = csv.DictWriter(f,['item','name'])
+        w = csv.DictWriter(f,['item','price'])
         w.writeheader()
-        for product in products:
-            w.writerow(product)
+        for row in rows:
+            products={}  
+            products['item'] = row.a['title']
+            # print(item)
+            products['price'] = row.find('h4', class_ = 'pull-right price').text 
+            # print(price)
+            product_list.append(products)
+            w.writerow(products)
+'''
 
 with DAG("my_dag", start_date=datetime(2021, 1, 1),
     schedule_interval="@daily", catchup=False) as dag:
